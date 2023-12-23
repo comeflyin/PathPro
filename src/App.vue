@@ -1,6 +1,5 @@
 <template>
-  <h1 class="text-3xl font-bold underline">Hello world!</h1>
-  <VanButton type="primary" text="按钮" />
+  <RouterView />
 </template>
 
 <script setup lang="ts"></script>

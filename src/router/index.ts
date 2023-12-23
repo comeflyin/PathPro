@@ -1,10 +1,29 @@
 import { createRouter, createWebHistory } from "vue-router"
+import type { RouteRecordRaw } from "vue-router"
 
-const routes = [
+const rootRoutes: RouteRecordRaw[] = [
   {
-    path: "/home",
+    path: "home",
     name: "Home",
-    component: () => import("../views/TheHome.vue"),
+    component: () => import("@/views/TheHome.vue"),
+  },
+]
+
+const routes: RouteRecordRaw[] = [
+  {
+    path: "/",
+    name: "App",
+    component: () => import("@/App.vue"),
+    redirect: "/root",
+    children: [
+      {
+        path: "root",
+        name: "Root",
+        component: () => import("@/views/TheRoot.vue"),
+        redirect: "/root/home",
+        children: rootRoutes,
+      },
+    ],
   },
 ]
 
