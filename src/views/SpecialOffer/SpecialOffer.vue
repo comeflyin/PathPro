@@ -2,11 +2,11 @@
   <div>
     <SOHead />
     <TopFix />
+    <DiscountCoupon />
+    <SelectOffers />
   </div>
 </template>
 
-<script setup lang="ts">
-import SOHead from "@/components/SpecialOfferComponent/SOHead.vue"
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>
