@@ -10,7 +10,12 @@ const rootRoutes: RouteRecordRaw[] = [
   {
     path: "account",
     name: "Account",
-    component: () => import("@/views/TheAccount.vue"),
+    component: () => import("@/views/account/TheAccount.vue"),
+  },
+  {
+    path: "settings",
+    name: "Settings",
+    component: () => import("@/views/account/components/TheSettings.vue"),
   },
 ]
 
