@@ -11,11 +11,9 @@
 
 <style>
 @layer utilities {
-  .cs {
-    &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
-    }
+  .cs::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 }
 @tailwind utilities;
