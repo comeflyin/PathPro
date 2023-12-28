@@ -4,7 +4,7 @@
     <van-tabbar-item icon="search"><RouterLink to="/root/specialOffer">特惠专区</RouterLink></van-tabbar-item>
     <van-tabbar-item icon="friends-o" to="/root/collection">我的收藏</van-tabbar-item>
     <van-tabbar-item icon="setting-o">行程</van-tabbar-item>
-    <van-tabbar-item icon="user-o">我的账户</van-tabbar-item>
+    <van-tabbar-item icon="user-o" to="/root/account">我的账户</van-tabbar-item>
   </van-tabbar>
 </template>
 

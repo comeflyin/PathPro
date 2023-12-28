@@ -8,6 +8,15 @@ const rootRoutes: RouteRecordRaw[] = [
     component: () => import("@/views/TheHome.vue"),
   },
   {
+    path: "account",
+    name: "Account",
+    component: () => import("@/views/account/TheAccount.vue"),
+  },
+  {
+    path: "settings",
+    name: "Settings",
+    component: () => import("@/views/account/components/TheSettings.vue"),
+  },
     path: "specialOffer",
     name: "SpecialOffer",
     component: () => import("@/views/SpecialOffer/SpecialOffer.vue"),
