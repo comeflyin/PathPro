@@ -17,6 +17,15 @@ const rootRoutes: RouteRecordRaw[] = [
     name: "Settings",
     component: () => import("@/views/account/components/TheSettings.vue"),
   },
+    path: "specialOffer",
+    name: "SpecialOffer",
+    component: () => import("@/views/SpecialOffer/SpecialOffer.vue"),
+  },
+  {
+    path: "collection",
+    name: "Collection",
+    component: () => import("@/views/TheCollection.vue"),
+  },
 ]
 
 const routes: RouteRecordRaw[] = [
