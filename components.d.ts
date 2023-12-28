@@ -7,6 +7,19 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Header: typeof import('./src/components/Header/Header.vue')['default']
+    NextTarget: typeof import('./src/components/WaitTrips/NextTarget.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+    TripHeader: typeof import('./src/components/Header/TripHeader.vue')['default']
+    TripsOrder: typeof import('./src/components/TripOrder/TripsOrder.vue')['default']
+    VanButton: typeof import('vant/es')['Button']
+    VanSticky: typeof import('vant/es')['Sticky']
+    VanTab: typeof import('vant/es')['Tab']
+    VanTabs: typeof import('vant/es')['Tabs']
+    WaitDetail: typeof import('./src/components/WaitTrips/WaitDetail.vue')['default']
+    WaitTripOrder: typeof import('./src/components/WaitTrips/WaitTripOrder.vue')['default']
+    WaitTrips: typeof import('./src/components/WaitTrips/WaitTrips.vue')['default']
     CityDiscount: typeof import('./src/components/SpecialOfferComponent/CityDiscount.vue')['default']
     Coupon: typeof import('./src/components/SpecialOfferComponent/Coupon.vue')['default']
     DiscountCoupon: typeof import('./src/components/SpecialOfferComponent/DiscountCoupon.vue')['default']
