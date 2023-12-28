@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <router-view />
-  </div>
+  <div>5555</div>
 </template>
 
 <script setup lang="ts"></script>
