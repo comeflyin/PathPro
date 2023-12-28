@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cs [&_div]:cleanScroll overflow-y-auto">
     <SOHead />
     <TopFix />
     <DiscountCoupon />
@@ -9,4 +9,12 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style>
+@layer utilities {
+  .cs::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+@tailwind utilities;
+</style>
