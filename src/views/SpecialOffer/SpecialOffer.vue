@@ -1,9 +1,11 @@
 <template>
-  <div class="cs [&_div]:cleanScroll overflow-y-auto">
-    <SOHead />
-    <TopFix />
-    <DiscountCoupon />
-    <SelectOffers />
+  <div>
+    <div class="h-[93vh] overflow-scroll">
+      <SOHead />
+      <TopFix />
+      <DiscountCoupon />
+      <SelectOffers />
+    </div>
   </div>
 </template>
 

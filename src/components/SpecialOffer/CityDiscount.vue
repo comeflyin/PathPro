@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-2xl p-4 h-20">
+  <div class="bg-white rounded-2xl p-4 h-full border-neutral-200 border">
     <div class="cs flex overflow-hidden overflow-x-auto">
       <div
         v-for="(city, index) in citys"

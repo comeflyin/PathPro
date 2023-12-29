@@ -1,13 +1,11 @@
 <template>
   <div>
-    <div class="flex">
-      <div>
-        <img src="./img/东京三丽鸥.png" alt="" class="w-44 h-auto rounded-xl" />
-      </div>
-      <div class="ml-3 mr-2 flex flex-col justify-center">
-        <div class="text-white bg-[#ff5b00] h-6 rounded-lg text-sm font-semibold flex items-center justify-center">
+    <div class="flex rounded-xl">
+      <img src="./img/东京三丽鸥.png" alt="" class="w-36 h-auto rounded-xl" />
+      <div class="ml-3 flex flex-col justify-center">
+        <span class="text-white bg-[#ff5b00] h-6 rounded-lg text-sm font-semibold flex items-center justify-center">
           Exclusive Discount
-        </div>
+        </span>
         <span class="text-sm text-[#7d7d7d] mt-1">{{ data.adress }}</span>
         <span class="text-sm font-semibold">{{ data.name }}</span>
         <div class="text-sm whitespace-nowrap overflow-hidden">
@@ -22,7 +20,7 @@
           <span>￥{{ data.price }}</span>
           <span class="text-sm ml-1">起</span>
         </div>
-        <div class="text-[#ff5b00] bg-[#fff0e5] text-sm text-center w-24 rounded-lg">{{ data.discountMsg }}</div>
+        <span class="text-[#ff5b00] bg-[#fff0e5] text-sm text-center w-24 rounded-lg">{{ data.discountMsg }}</span>
       </div>
     </div>
   </div>
