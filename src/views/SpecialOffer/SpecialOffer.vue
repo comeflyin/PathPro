@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="h-[93vh] overflow-scroll">
+    <div class="h-[93vh] overflow-scroll cs">
       <SOHead />
       <TopFix />
       <DiscountCoupon />
