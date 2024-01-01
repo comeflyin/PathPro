@@ -1,7 +1,9 @@
 <template>
   <div>
     <RouterView />
-    <TabBar class="absolute bottom-0" />
+    <div class="footer h-12">
+      <TabBar class="fixed bottom-0" />
+    </div>
   </div>
 </template>
 

@@ -68,7 +68,7 @@
       <van-cell
         icon="location-o"
         title="设置"
-        to="/root/settings"
+        to="/settings"
         title-style="font-size:14px;font-weight:bold;"
         is-link
         size="large"
