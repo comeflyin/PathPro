@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 mb-3 flex justify-center items-center overflow-hidden h-20">
+  <div class="mt-4 mb-3 flex justify-center items-center overflow-hidden">
     <div
       class="cs ml-3 mr-3 w-11/12 h-12 border-slate-300 border-2 p-1 text-base rounded-xl pl-2 pr-2 overflow-hidden overflow-x-auto"
     >
