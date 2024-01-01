@@ -28,14 +28,14 @@ const rootRoutes: RouteRecordRaw[] = [
     component: () => import("@/views/TheCollection.vue"),
   },
   {
-    path: "Trips",
+    path: "trips",
     name: "Trips",
-    component: () => import("../views/MainTrips.vue"),
+    component: () => import("@/views/Trips/MainTrips.vue"),
   },
   {
-    path: "Trips/SearchAll",
-    name: "SearchAll",
-    component: () => import("../views/SearchAll.vue"),
+    path: "trips/search",
+    name: "SearchBar",
+    component: () => import("@/views/Trips/SearchBar.vue"),
   },
 ]
 

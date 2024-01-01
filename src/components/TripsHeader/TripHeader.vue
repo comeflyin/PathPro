@@ -17,8 +17,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue"
-import WaitTrips from "../WaitTrips/WaitTrips.vue"
-import TripsOrder from "../TripOrder/TripsOrder.vue"
+import WaitTrips from "@/components/WaitTrips/WaitTrips.vue"
+import TripsOrder from "@/components/TripsOrder/TripsOrder.vue"
 
 const active = ref(0)
 </script>
