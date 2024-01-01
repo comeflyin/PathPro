@@ -35,7 +35,7 @@
         </button>
       </div>
       <div class="text-center underline mt-4">
-        <router-link to="/trip/more">查看更多城市</router-link>
+        <router-link :to="{ name: 'MoreCity' }">查看更多城市</router-link>
       </div>
     </div>
   </div>
