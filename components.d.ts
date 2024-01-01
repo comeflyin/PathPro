@@ -28,7 +28,7 @@ declare module 'vue' {
     TravelMarketing: typeof import('./src/components/TravelAgent/TravelMarketing.vue')['default']
     TripHeader: typeof import('./src/components/TripHeader/TripHeader.vue')['default']
     TripOrder: typeof import('./src/components/TripOrder/TripOrder.vue')['default']
-    TripsOrder: typeof import('./src/components/TripOrder/TripsOrder.vue')['default']
+    TripsOrder: typeof import('./src/components/TripsOrder/TripsOrder.vue')['default']
     VanButton: typeof import('vant/es')['Button']
     VanCell: typeof import('vant/es')['Cell']
     VanDivider: typeof import('vant/es')['Divider']
