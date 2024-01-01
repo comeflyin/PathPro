@@ -7,6 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import TripHeader from "@/components/Header/TripHeader.vue"
+import TripHeader from "@/components/TripHeader/TripHeader.vue"
 </script>
 <style></style>
