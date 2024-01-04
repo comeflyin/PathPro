@@ -1,6 +1,7 @@
 import { defineStore } from "pinia"
 import { ref } from "vue"
 import type { Discount } from "@/types/discount"
+import type { Gifts } from "@/types/gift"
 
 export const useDiscountStore = defineStore("discount", () => {
   const discountInfo = ref<Discount[]>([
@@ -362,5 +363,23 @@ export const useDiscountStore = defineStore("discount", () => {
 
   return {
     discountInfo,
+  }
+})
+
+export const useGiftStore = defineStore("gifts", () => {
+  const giftsInfo = ref<Gifts[]>([
+    {
+      title: "GO！香港｜香港旅游大礼包",
+      cover:
+        "https://res.klook.com/image/upload/fl_lossy.progressive,w_400,h_400,c_fill,q_85/akb7kbho72z92idxprhw.webp",
+      participants: "4k",
+      city: "中国香港",
+      price: 64.0,
+      discounts: ["最高价值：￥ 742"],
+    },
+  ])
+
+  return {
+    giftsInfo,
   }
 })
