@@ -12,6 +12,8 @@ declare module 'vue' {
     DiscountCoupon: typeof import('./src/components/DiscountSection/DiscountCoupon.vue')['default']
     DiscountSection: typeof import('./src/components/DiscountSection/DiscountSection.vue')['default']
     DiscountSectionHeader: typeof import('./src/components/DiscountSection/DiscountSectionHeader.vue')['default']
+    ExclusiveOffers: typeof import('./src/components/DiscountSection/ExclusiveOffers.vue')['default']
+    GiftPack: typeof import('./src/components/DiscountSection/GiftPack.vue')['default']
     Header: (typeof import("./src/components/Header/Header.vue"))["default"]
     NavBar: typeof import('./src/components/DiscountSection/NavBar.vue')['default']
     NavBat: typeof import('./src/components/DiscountSection/NavBat.vue')['default']
