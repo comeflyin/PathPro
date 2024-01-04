@@ -1,6 +1,6 @@
 <template>
   <div class="m-2 mt-5">
-    <div class="m-2 mt-7 border rounded-3xl relative bg-[#fee8bf] h-auto">
+    <div class="m-2 mt-7 border rounded-3xl relative bg-[#ffe0ce] h-auto">
       <img
         src="https://res.klook.com/image/upload/fl_lossy.progressive,w_208,h_208,c_fill,q_85/v1677035412/UED_new/Platform/platform_deals_spot_illustration_2302/sales/value_pack.webp"
         alt=""
