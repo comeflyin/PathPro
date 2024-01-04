@@ -13,6 +13,8 @@ declare module 'vue' {
     DiscountSection: typeof import('./src/components/DiscountSection/DiscountSection.vue')['default']
     DiscountSectionHeader: typeof import('./src/components/DiscountSection/DiscountSectionHeader.vue')['default']
     FailPayOrder: typeof import('./src/components/TravelAgent/FailPayOrder.vue')['default']
+    ExclusiveOffers: typeof import('./src/components/DiscountSection/ExclusiveOffers.vue')['default']
+    GiftPack: typeof import('./src/components/DiscountSection/GiftPack.vue')['default']
     Header: (typeof import("./src/components/Header/Header.vue"))["default"]
     MyBuyOrder: typeof import('./src/components/TravelAgent/MyBuyOrder.vue')['default']
     MyOrder: typeof import('./src/components/TravelAgent/MyOrder.vue')['default']

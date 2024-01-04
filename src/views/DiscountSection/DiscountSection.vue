@@ -5,6 +5,7 @@
       <NavBar />
       <DiscountCoupon />
       <DiscountSection />
+      <GiftPack />
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@ import DiscountSectionHeader from "@/components/DiscountSection/DiscountSectionH
 import NavBar from "@/components/DiscountSection/NavBar.vue"
 import DiscountCoupon from "@/components/DiscountSection/DiscountCoupon.vue"
 import DiscountSection from "@/components/DiscountSection/DiscountSection.vue"
+import GiftPack from "@/components/DiscountSection/GiftPack.vue"
 </script>
 
 <style>
