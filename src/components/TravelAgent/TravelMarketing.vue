@@ -47,7 +47,7 @@ const nums = ref(2)
 </script>
 
 <style scoped>
-@import "https://at.alicdn.com/t/c/font_4386185_p21uuns0g6.css";
+@import "https://at.alicdn.com/t/c/font_4386185_f0ejxcwfbv.css";
 .icon-dingwei {
   font-size: 20px;
   color: #000;
