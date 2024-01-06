@@ -1,16 +1,22 @@
-import { Ref, onMounted, onUnmounted, ref, watch } from "vue"
+import { Ref, onUnmounted, ref, watch } from "vue"
 
 const useIntersectionObserver = (NodeRef: Ref<HTMLElement | null>, loadMore: () => void) => {
   const hasMore = ref(true)
   let observer: IntersectionObserver
 
-  onMounted(() => {
-    observer = new IntersectionObserver(([{ isIntersecting }]) => {
-      if (isIntersecting) {
-        loadMore()
-      }
-    })
-    observer.observe(NodeRef.value!)
+  watch(NodeRef, (newNodeRef, oldNodeRef) => {
+    if (oldNodeRef) {
+      observer.unobserve(oldNodeRef)
+    }
+
+    if (newNodeRef) {
+      observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          loadMore()
+        }
+      })
+      observer.observe(newNodeRef)
+    }
   })
 
   onUnmounted(() => {
