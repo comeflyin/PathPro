@@ -8,12 +8,17 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     CityDiscount: typeof import('./src/components/SpecialOfferComponent/CityDiscount.vue')['default']
+    CollectionBag: typeof import('./src/components/CollectionComponents/CollectionBag.vue')['default']
+    CollectionBagHeader: typeof import('./src/components/CollectionComponents/CollectionBagHeader.vue')['default']
+    CollectionTitle: typeof import('./src/components/CollectionComponents/CollectionTitle.vue')['default']
     Coupon: typeof import('./src/components/SpecialOfferComponent/Coupon.vue')['default']
     DiscountCoupon: typeof import('./src/components/SpecialOfferComponent/DiscountCoupon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SelectOffers: typeof import('./src/components/SpecialOfferComponent/SelectOffers.vue')['default']
     SOHead: typeof import('./src/components/SpecialOfferComponent/SOHead.vue')['default']
+    Titile: typeof import('./src/components/CollectionComponents/titile.vue')['default']
+    Title: typeof import('./src/components/CollectionComponents/title.vue')['default']
     TopFix: typeof import('./src/components/SpecialOfferComponent/TopFix.vue')['default']
     TourMsg: typeof import('./src/components/SpecialOfferComponent/TourMsg.vue')['default']
     VanButton: typeof import('vant/es')['Button']

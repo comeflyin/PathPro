@@ -15,7 +15,7 @@ const rootRoutes: RouteRecordRaw[] = [
   {
     path: "collection",
     name: "Collection",
-    component: () => import("@/views/TheCollection.vue"),
+    component: () => import("@/views/Collection/TheCollection.vue"),
   },
 ]
 
