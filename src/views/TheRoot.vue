@@ -11,4 +11,4 @@
 import TabBar from "@/views/layout/TabBar.vue"
 </script>
 
-<style scoped></style>
+<style></style>
