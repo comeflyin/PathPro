@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[450px] ml-2 rounded-lg bg-slate-400 flxe content-stretch">
+  <div class="h-[450px] ml-2 rounded-xl bg-slate-400 flxe content-stretch overflow-hidden">
     <div>
       <div class="h-80 w-80">
         <img :src="img" alt="" />
