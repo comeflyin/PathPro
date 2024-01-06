@@ -31,6 +31,24 @@ const rootRoutes: RouteRecordRaw[] = [
     path: "trip",
     name: "Trip",
     component: () => import("@/views/TravelPlan/TravelPlan.vue"),
+    children: [
+      //我的订单
+      {
+        path: "my-order",
+        name: "MyOrder",
+        component: () => import("@/views/TravelPlan/MyOrder.vue"),
+      },
+      {
+        path: "fail-payorder",
+        name: "FailPayOrder",
+        component: () => import("@/views/TravelPlan/FailPayOrder.vue"),
+      },
+      {
+        path: "seale-order",
+        name: "SealeOrder",
+        component: () => import("@/views/TravelPlan/SealedOrders.vue"),
+      },
+    ],
   },
 ]
 
