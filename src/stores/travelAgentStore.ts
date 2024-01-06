@@ -12,35 +12,35 @@ export const usetravelAgent = defineStore("travelAgent", () => {
           cityItem: [
             {
               city: "北京",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
             {
               city: "上海",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
             {
               city: "广州",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
             {
               city: "深圳",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
             {
               city: "杭州",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
             {
               city: "成都",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
             {
               city: "重庆",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
             {
               city: "西安",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
           ],
         },
@@ -49,11 +49,20 @@ export const usetravelAgent = defineStore("travelAgent", () => {
           cityItem: [
             {
               city: "中国香港",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
             },
             {
               city: "中国澳门",
-              img: "222",
+              img: "@/assets/image/NoWait.png",
+            },
+          ],
+        },
+        {
+          title: "中国台湾",
+          cityItem: [
+            {
+              city: "中国台湾",
+              img: "@/assets/image/NoWait.png",
             },
           ],
         },
