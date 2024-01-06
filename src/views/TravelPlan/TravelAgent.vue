@@ -1,9 +1,12 @@
 <template>
+  <!-- 待出行 -->
   <div class="overflow-hidden">
     <div class="WaitOrder">
+      <!-- 待出行订单 -->
       <OrderList />
     </div>
     <div class="">
+      <!-- 待出行城市 -->
       <TravelMarketing />
     </div>
   </div>
