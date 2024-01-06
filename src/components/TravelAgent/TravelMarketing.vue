@@ -1,4 +1,5 @@
 <template>
+  <!-- 待出行下部分 -->
   <div>
     <div class="mt-4">
       <span class="text-2xl font-bold">下一站目的地</span>
@@ -34,9 +35,9 @@
           前往探索
         </button>
       </div>
-      <div class="text-center underline mt-4">
-        <router-link :to="{ name: 'MoreCity' }">查看更多城市</router-link>
-      </div>
+    </div>
+    <div class="text-center underline mt-4">
+      <router-link :to="{ name: 'MoreCity' }">查看更多城市</router-link>
     </div>
   </div>
 </template>
