@@ -2,6 +2,7 @@ import { defineStore } from "pinia"
 import { ref } from "vue"
 import type { Discount } from "@/types/discount"
 import type { Gifts } from "@/types/gift"
+import type { HotSale } from "@/types/hotSale"
 
 export const useDiscountStore = defineStore("discount", () => {
   const discountInfo = ref<Discount[]>([
@@ -377,9 +378,139 @@ export const useGiftStore = defineStore("gifts", () => {
       price: 64.0,
       discounts: ["最高价值：￥ 742"],
     },
+    {
+      title: "GO！香港｜香港旅游大礼包",
+      cover:
+        "https://res.klook.com/image/upload/fl_lossy.progressive,w_400,h_400,c_fill,q_85/akb7kbho72z92idxprhw.webp",
+      participants: "4k",
+      city: "中国香港",
+      price: 64.0,
+      discounts: ["最高价值：￥ 742"],
+    },
   ])
 
   return {
     giftsInfo,
+  }
+})
+
+export const useHotSaleStore = defineStore("hotSale", () => {
+  const hotSaleInfo = ref<HotSale[]>([
+    {
+      type: "全部",
+      hotSales: [
+        {
+          title: "东京三丽鸥彩虹乐园门票",
+          cover:
+            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
+          evaluate: 4273,
+          rating: 4.7,
+          city: "东京",
+          price: 165,
+        },
+      ],
+    },
+    {
+      type: "住宿套餐",
+      hotSales: [
+        {
+          title: "东京三丽鸥彩虹乐园门票",
+          cover:
+            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
+          evaluate: 4273,
+          rating: 4.7,
+          city: "东京",
+          price: 165,
+        },
+      ],
+    },
+    {
+      type: "WiFi",
+      hotSales: [
+        {
+          title: "东京三丽鸥彩虹乐园门票",
+          cover:
+            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
+          evaluate: 4273,
+          rating: 4.7,
+          city: "东京",
+          price: 165,
+        },
+      ],
+    },
+    {
+      type: "全部",
+      hotSales: [
+        {
+          title: "东京三丽鸥彩虹乐园门票",
+          cover:
+            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
+          evaluate: 4273,
+          rating: 4.7,
+          city: "东京",
+          price: 165,
+        },
+      ],
+    },
+    {
+      type: "全部",
+      hotSales: [
+        {
+          title: "东京三丽鸥彩虹乐园门票",
+          cover:
+            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
+          evaluate: 4273,
+          rating: 4.7,
+          city: "东京",
+          price: 165,
+        },
+      ],
+    },
+    {
+      type: "全部",
+      hotSales: [
+        {
+          title: "东京三丽鸥彩虹乐园门票",
+          cover:
+            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
+          evaluate: 4273,
+          rating: 4.7,
+          city: "东京",
+          price: 165,
+        },
+      ],
+    },
+    {
+      type: "全部",
+      hotSales: [
+        {
+          title: "东京三丽鸥彩虹乐园门票",
+          cover:
+            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
+          evaluate: 4273,
+          rating: 4.7,
+          city: "东京",
+          price: 165,
+        },
+      ],
+    },
+    {
+      type: "全部",
+      hotSales: [
+        {
+          title: "东京三丽鸥彩虹乐园门票",
+          cover:
+            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
+          evaluate: 4273,
+          rating: 4.7,
+          city: "东京",
+          price: 165,
+        },
+      ],
+    },
+  ])
+
+  return {
+    hotSaleInfo,
   }
 })
