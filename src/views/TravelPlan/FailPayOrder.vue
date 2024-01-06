@@ -1,5 +1,7 @@
 <template>
-  <div>支付失效订单</div>
+  <div>
+    <img src="../../assets/image/NoOrder.jpg" alt="" />
+  </div>
 </template>
 
 <script setup lang="ts"></script>
