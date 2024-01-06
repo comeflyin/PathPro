@@ -5,9 +5,12 @@
       <van-image round width="4rem" height="4rem" src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" />
       <div class="ml-4">
         <div class="font-bold text-lg">Klook客路用户</div>
-        <div class="mt-1 text-xs text-[#2d72c8]">个人信息管理<van-icon class="ml-1" name="arrow" /></div>
+        <div class="mt-1 text-xs text-[#2d72c8]" @click="toManagement">
+          个人信息管理<van-icon class="ml-1" name="arrow" />
+        </div>
       </div>
     </div>
+    <!-- 优惠积分 -->
     <div class="w-full h-20 bg-[#fff] my-4 rounded-lg flex items-center p-2 text-sm">
       <div class="flex-1 flex flex-col items-center">
         <span class="font-bold">+</span>
@@ -21,15 +24,17 @@
     </div>
     <div class="bg-[#fff] mb-2 rounded-lg">
       <van-cell
-        icon="location-o"
+        icon="notes-o"
         title="我的订单"
+        to="/account/order"
         title-style="font-size:14px;font-weight:bold;"
         is-link
         size="large"
       />
       <van-cell
         icon="location-o"
-        title="我的订单"
+        title="常用信息"
+        to="/account/information"
         title-style="font-size:14px;font-weight:bold;"
         label="管理出行人信息、地址和支付方式"
         is-link
@@ -37,21 +42,15 @@
       />
       <van-cell
         icon="location-o"
-        title="我的订单"
+        title="我的评价"
         title-style="font-size:14px;font-weight:bold;"
         is-link
         size="large"
       />
+      <van-cell icon="location-o" title="通知" title-style="font-size:14px;font-weight:bold;" is-link size="large" />
       <van-cell
         icon="location-o"
-        title="我的订单"
-        title-style="font-size:14px;font-weight:bold;"
-        is-link
-        size="large"
-      />
-      <van-cell
-        icon="location-o"
-        title="我的订单"
+        title="我的YSIM"
         title-style="font-size:14px;font-weight:bold;"
         is-link
         size="large"
@@ -60,7 +59,8 @@
     <div class="mb-2">
       <van-cell
         icon="location-o"
-        title="我的订单"
+        title="帮助中心"
+        to="/account/help"
         title-style="font-size:14px;font-weight:bold;"
         is-link
         size="large"
@@ -68,7 +68,7 @@
       <van-cell
         icon="location-o"
         title="设置"
-        to="/settings"
+        to="/account/settings"
         title-style="font-size:14px;font-weight:bold;"
         is-link
         size="large"
@@ -97,7 +97,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from "vue-router"
+const router = useRouter()
+const toManagement = () => {
+  router.push("/account/management")
+}
+</script>
 
 <style scoped>
 :deep(.van-cell__label) {
