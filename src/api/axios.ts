@@ -1,5 +1,6 @@
 import axios from "axios"
 import type { AxiosRequestConfig, AxiosResponse } from "axios"
+import { showFailToast } from "vant"
 
 const instance = axios.create({
   baseURL: "/api",
@@ -23,11 +24,19 @@ instance.interceptors.request.use(
  * 响应拦截器
  */
 instance.interceptors.response.use(
-  (response) => {
-    return response
+  (response: AxiosResponse) => {
+    if (response.status !== 200) {
+      showFailToast("服务端异常")
+    } else {
+      if (response.data.code !== 0) {
+        showFailToast(response.data.msg)
+        return Promise.reject(response)
+      }
+    }
+    return response.data
   },
   (error) => {
-    return Promise.reject(error)
+    console.log(error)
   },
 )
 

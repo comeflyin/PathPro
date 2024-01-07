@@ -42,7 +42,8 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
 import { useRouter } from "vue-router"
-// import axios from "@/api/axios.ts"
+import axios from "@/api/axios.ts"
+import { showSuccessToast, showFailToast } from "vant"
 const router = useRouter()
 const back = () => {
   router.back()
@@ -57,9 +58,24 @@ const params = reactive<LoginInfo>({
 })
 const checked = ref(false)
 const onSubmit = async () => {
-  console.log(params)
-  // const data = await axios.post("/login", params)
-  // console.log(data)
+  if (!checked.value) {
+    showFailToast("请先同意用户协议")
+    return
+  }
+  try {
+    const data = await axios.post("/user/login", {
+      username: params.username,
+      password: params.password,
+    })
+    showSuccessToast("登录成功")
+    const token: string = data.data.token
+    localStorage.setItem("token", token)
+    setTimeout(() => {
+      router.push("/home")
+    }, 500)
+  } catch (err) {
+    showFailToast("账号或密码错误")
+  }
 }
 const toRegister = () => {
   router.push("/register")

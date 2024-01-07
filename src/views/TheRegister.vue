@@ -1,6 +1,6 @@
 <template>
   <div class="w-screen h-screen">
-    <van-nav-bar left-arrow>
+    <van-nav-bar left-arrow @click="back">
       <template #right>
         <span class="text-xs text-gray-400">遇到问题</span>
       </template>
@@ -29,7 +29,8 @@
           name="确认密码"
           label="确认密码"
           placeholder="确认密码"
-          :rules="[{ required: true, message: '请填写确认密码' }]"
+          :rules="[{ required: true, message: Message(params.rpassword) }]"
+          validate-trigger="onBlur"
         />
       </van-cell-group>
       <div style="margin: 16px">
@@ -48,8 +49,10 @@
 </template>
 
 <script setup lang="ts">
+import axios from "@/api/axios.ts"
 import { reactive, ref } from "vue"
 import { useRouter } from "vue-router"
+import { showFailToast, showSuccessToast } from "vant"
 const router = useRouter()
 interface LoginInfo {
   username: string
@@ -61,12 +64,38 @@ const params = reactive<LoginInfo>({
   password: "",
   rpassword: "",
 })
+const Message = (value?: string): string => {
+  if (value === "") {
+    return "请填写确认密码"
+  } else if (value !== params.password) {
+    return "两次密码不一致"
+  }
+  return "dfdddf"
+}
 const checked = ref(false)
-const onSubmit = () => {
-  console.log(params)
+const onSubmit = async () => {
+  if (!checked.value) {
+    showFailToast("请先同意用户协议")
+    return
+  }
+  try {
+    await axios.post("/user/register", {
+      username: params.username,
+      password: params.password,
+    })
+    showSuccessToast("注册成功")
+    setTimeout(() => {
+      router.push("/login")
+    }, 500)
+  } catch (err) {
+    showFailToast("注册失败")
+  }
 }
 const toLogin = () => {
   router.push("/login")
+}
+const back = () => {
+  router.back()
 }
 </script>
 
