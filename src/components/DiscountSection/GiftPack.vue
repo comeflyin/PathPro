@@ -16,8 +16,8 @@
           :key="index"
           :discount="item"
           :isflex="true"
-          :width="'full'"
-          :widthimg="'2/5'"
+          width="100%"
+          widthimg="40%"
         />
       </div>
     </div>

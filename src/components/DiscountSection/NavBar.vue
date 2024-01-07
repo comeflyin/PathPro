@@ -43,6 +43,7 @@ const checkStickiness = () => {
     isSticky.value = false
   }
 }
+
 onMounted(() => {
   window.addEventListener("scroll", checkStickiness)
   // 初始检查

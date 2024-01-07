@@ -1,7 +1,14 @@
 <template>
-  <div class="mt-2 mb-2" :class="{ flex: isflex, [`w-${width}`]: true }">
+  <div class="mt-2 mb-2" :class="{ flex: isflex }" :style="{ width }">
     <!-- 图片封面 -->
-    <img :src="discount.cover" alt="" class="rounded-xl" :class="{ [`w-${widthimg}`]: true }" />
+    <img
+      :src="discount.cover"
+      alt=""
+      class="rounded-xl"
+      :style="{
+        width: widthimg,
+      }"
+    />
     <!-- 信息块 -->
     <div class="flex flex-col justify-center" :class="{ 'pl-2': isflex }">
       <!-- Exclusive Discount -->
@@ -85,38 +92,29 @@ interface MsgItem {
   tags?: string[]
 }
 
-defineProps({
-  // 是否在一行
-  isflex: {
-    type: Boolean,
-    default: false,
+withDefaults(
+  defineProps<{
+    // 是否在一行
+    isflex?: boolean
+    // 多行省略
+    lines?: number
+    // 数据元
+    discount: MsgItem
+    // 整体宽度
+    width?: string
+    // 图片宽度
+    widthimg?: string
+    // Exclusive
+    Exclusive?: boolean
+  }>(),
+  {
+    isflex: false,
+    lines: 1,
+    width: "48%",
+    widthimg: "100%",
+    Exclusive: false,
   },
-  // 多行省略
-  lines: {
-    type: Number,
-    default: 1,
-  },
-  // 数据元
-  discount: {
-    type: Object as () => MsgItem,
-    required: true,
-  },
-  // 整体宽度
-  width: {
-    type: String,
-    default: "[48%]",
-  },
-  // 图片宽度
-  widthimg: {
-    type: String,
-    default: "full",
-  },
-  // Exclusive
-  Exclusive: {
-    type: Boolean,
-    default: false,
-  },
-})
+)
 </script>
 
 <style scoped></style>

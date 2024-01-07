@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex rounded-xl mb-4">
-      <MsgItem :discount="discounts[0]" :width="'full'" :widthimg="'1/2'" :isflex="true" :Exclusive="true" />
+      <MsgItem :discount="discounts[0]" width="100%" widthimg="50%" :isflex="true" :Exclusive="true" />
     </div>
     <div class="flex flex-wrap justify-between mt-2">
       <!-- 循环生成所有Item -->
@@ -11,7 +11,7 @@
         v-show="index > 0 && index < showCount"
         :discount="item"
         :lines="1"
-        :width="'[48%]'"
+        width="48%"
       />
     </div>
     <div
