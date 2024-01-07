@@ -10,6 +10,7 @@ export type DiscountItem = {
   title: string
   /** 封面 */
   cover: string
+  /** 评价人数 */
   evaluate: number
   /** 评分 */
   rating: number
