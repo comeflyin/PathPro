@@ -99,4 +99,3 @@ const { promotionalList } = toRefs(promotionalStore)
 </script>
 
 <style scoped></style>
-@/stores/homeStore
