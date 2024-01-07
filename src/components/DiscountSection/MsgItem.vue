@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-2 mb-2" :class="{ flex: isflex }" :style="{ width }">
+  <div class="item-warpper mt-2 mb-2" :class="{ flex: isflex }" :style="{ width }">
     <!-- 图片封面 -->
     <img
       :src="discount.cover"
@@ -10,7 +10,7 @@
       }"
     />
     <!-- 信息块 -->
-    <div class="flex flex-col justify-center" :class="{ 'pl-2': isflex }">
+    <div class="flex flex-col justify-center" :class="{ 'ml-2': isflex }" :style="{ width: widthimg }">
       <!-- Exclusive Discount -->
       <div v-if="Exclusive">
         <span
@@ -23,7 +23,7 @@
       <span class="text-sm text-[#7d7d7d] mt-1" v-if="discount.city">{{ discount.city }}</span>
       <!-- 优惠信息标题 -->
       <span
-        class="text-sm font-semibold w-full overflow-hidden text-ellipsis"
+        class="text-sm font-semibold w-11/12 overflow-hidden text-ellipsis"
         v-if="discount.title"
         :class="{ 'whitespace-nowrap': lines == 1, [`line-clamp-${lines}`]: lines != 1 }"
       >
@@ -31,13 +31,13 @@
       </span>
       <!-- 评分与参与情况 -->
       <div class="text-sm flex-nowrap flex">
-        <span class="text-[#f09b0a]"><van-icon name="star" />{{ discount.rating }}</span>
+        <span class="text-[#f09b0a]" v-if="discount.rating"><van-icon name="star" />{{ discount.rating }}</span>
         <span
           class="text-[#9a9a9a] w-3/4 whitespace-nowrap overflow-hidden text-ellipsis"
-          v-if="discount.evaluate && discount.participants"
+          v-if="discount.evaluate || discount.participants"
         >
           <span v-if="discount.evaluate">({{ discount.evaluate }})</span
-          ><span v-if="discount.evaluate || discount.participants">·</span
+          ><span v-if="discount.evaluate && discount.participants">·</span
           ><span v-if="discount.participants"> {{ discount.participants }}+人参与 </span>
         </span>
       </div>

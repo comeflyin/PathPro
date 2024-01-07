@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue"
-const items = ["领卷享折扣", "年末促销季", "景点通票", "礼卷包", "打折热卖区"]
+const items = ["领卷享折扣", "年末促销季", "礼卷包", "打折热卖区"]
 // 选中元素
 let checked = ref(0)
 // 选中样式
