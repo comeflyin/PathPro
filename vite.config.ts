@@ -17,4 +17,15 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://api.pathpro.ronki.moe",
+        changeOrigin: true,
+        rewrite: (path) => {
+          return path.replace(/^\/api/, "")
+        },
+      },
+    },
+  },
 })

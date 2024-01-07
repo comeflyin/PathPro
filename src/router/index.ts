@@ -83,5 +83,17 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 })
+const EnterableRoutes: string[] = ["Home", "Account", "Collection", "Trip", "discount", "Login", "Register"]
+router.beforeEach((to, from, next) => {
+  if (EnterableRoutes.includes(to.name as string)) {
+    next()
+  } else {
+    if (localStorage.getItem("token")) {
+      next()
+    } else {
+      next("/login")
+    }
+  }
+})
 
 export default router

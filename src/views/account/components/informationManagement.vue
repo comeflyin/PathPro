@@ -29,7 +29,7 @@
               <van-cell-group inset>
                 <div>名</div>
                 <van-field
-                  v-model="NameForm.username"
+                  v-model="formInfo.username"
                   name="名"
                   placeholder="请填写"
                   :rules="[{ required: true, message: '此栏为必填字段' }]"
@@ -38,7 +38,7 @@
               <van-cell-group inset>
                 <div>姓</div>
                 <van-field
-                  v-model="NameForm.surname"
+                  v-model="formInfo.surname"
                   name="姓"
                   placeholder="请填写"
                   :rules="[{ required: true, message: '此栏为必填字段' }]"
@@ -51,7 +51,7 @@
           </div>
         </van-action-sheet>
       </div>
-      <div class="font-bold mb-2">未填写</div>
+      <div class="font-bold mb-2">{{ formInfo.username ? formInfo.surname + formInfo.username : "未填写" }}</div>
     </div>
     <!-- 称谓 -->
     <div class="m-2 border-b">
@@ -62,8 +62,8 @@
           <div class="content p-2">
             <div>称谓</div>
             <div class="my-2 w-full h-10 border border-gray-200 rounded-lg p-2 mb-8">
-              <select class="w-full h-full outline-none">
-                <option value="先生" selected>先生</option>
+              <select class="w-full h-full outline-none" v-model="formInfo.appellation">
+                <option value="先生">先生</option>
                 <option value="女士">女士</option>
                 <option value="小姐">小姐</option>
               </select>
@@ -72,7 +72,7 @@
           </div>
         </van-action-sheet>
       </div>
-      <div class="font-bold mb-2">未填写</div>
+      <div class="font-bold mb-2">{{ formInfo.appellation ? formInfo.appellation : "未填写" }}</div>
     </div>
     <!-- 出生日期 -->
     <div class="m-2 border-b">
@@ -81,11 +81,17 @@
         <div><van-cell title="编辑" title-class="text-blue-500" @click="showTotal.showFour = true" /></div>
         <van-action-sheet v-model:show="showTotal.showFour" title="出生日期">
           <div class="content">
-            <van-date-picker v-model="currentDate" :min-date="minDate" :max-date="maxDate" confit="" />
+            <van-date-picker
+              v-model="formInfo.currentDate"
+              :min-date="minDate"
+              :max-date="maxDate"
+              @confirm="modify"
+              @cancel="showTotal.showFour = false"
+            />
           </div>
         </van-action-sheet>
       </div>
-      <div class="font-bold mb-2">未填写</div>
+      <div class="font-bold mb-2">{{ birthday ? birthday : "未填写" }}</div>
     </div>
     <!-- 居住地 -->
     <div class="m-2 border-b">
@@ -102,7 +108,7 @@
           />
         </van-popup>
       </div>
-      <div class="font-bold mb-2">{{ fieldValue ? fieldValue : "未填写" }}</div>
+      <div class="font-bold mb-2">{{ formInfo.fieldValue ? formInfo.fieldValue : "未填写" }}</div>
     </div>
   </div>
 </template>
@@ -113,13 +119,27 @@ import { useCascaderAreaData } from "@vant/area-data"
 interface nameForm {
   username: string
   surname: string
+  appellation: string
+  currentDate: string[]
+  fieldValue: string
 }
-const NameForm = reactive<nameForm>({
+const formInfo = reactive<nameForm>({
   username: "",
   surname: "",
+  appellation: "",
+  currentDate: ["2000", "01", "01"],
+  fieldValue: "",
 })
+const birthday = ref()
+const modify = () => {
+  if (formInfo.currentDate) {
+    birthday.value = formInfo.currentDate[0] + "年" + formInfo.currentDate[1] + "月" + formInfo.currentDate[2] + "日"
+  }
+  showTotal.showFour = false
+}
 const onSubmitName = () => {
-  console.log(NameForm)
+  console.log(formInfo.username)
+  console.log(formInfo.surname)
 }
 const showTotal = reactive({
   showOne: false,
@@ -128,16 +148,14 @@ const showTotal = reactive({
   showFour: false,
   showFive: false,
 })
-const currentDate = ref(["2000", "01", "01"])
 const minDate = new Date(1990, 0, 1)
 const maxDate = new Date(2025, 0, 1)
 const show = ref(false)
-const fieldValue = ref("")
 const cascaderValue = ref("")
 const options = useCascaderAreaData()
 const onFinish = (e: { selectedOptions: { text: string }[] }) => {
   show.value = false
-  fieldValue.value = e.selectedOptions.map((option: { text: string }) => option.text).join("/")
+  formInfo.fieldValue = e.selectedOptions.map((option: { text: string }) => option.text).join("/")
 }
 
 const onClickLeft = () => {

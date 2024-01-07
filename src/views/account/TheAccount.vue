@@ -1,13 +1,19 @@
 <template>
   <div class="w-screen h-screen overflow-y-auto p-4 bg-[#f6f6f6]">
     <!-- avatar -->
-    <div class="flex items-center">
+    <div class="flex items-center" v-if="token">
       <van-image round width="4rem" height="4rem" src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" />
       <div class="ml-4">
-        <div class="font-bold text-lg">Klook客路用户</div>
+        <div class="font-bold text-lg">PathPro旅行用户</div>
         <div class="mt-1 text-xs text-[#2d72c8]" @click="toManagement">
           个人信息管理<van-icon class="ml-1" name="arrow" />
         </div>
+      </div>
+    </div>
+    <div class="flex items-center" v-else @click="toLogin">
+      <van-image round width="4rem" height="4rem" src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" />
+      <div class="ml-4">
+        <div class="font-bold text-lg">登录|注册</div>
       </div>
     </div>
     <!-- 优惠积分 -->
@@ -32,7 +38,7 @@
         size="large"
       />
       <van-cell
-        icon="location-o"
+        icon="manager-o"
         title="常用信息"
         to="/account/information"
         title-style="font-size:14px;font-weight:bold;"
@@ -40,25 +46,13 @@
         is-link
         size="large"
       />
-      <van-cell
-        icon="location-o"
-        title="我的评价"
-        title-style="font-size:14px;font-weight:bold;"
-        is-link
-        size="large"
-      />
-      <van-cell icon="location-o" title="通知" title-style="font-size:14px;font-weight:bold;" is-link size="large" />
-      <van-cell
-        icon="location-o"
-        title="我的YSIM"
-        title-style="font-size:14px;font-weight:bold;"
-        is-link
-        size="large"
-      />
+      <van-cell icon="comment-o" title="我的评价" title-style="font-size:14px;font-weight:bold;" is-link size="large" />
+      <van-cell icon="envelop-o" title="通知" title-style="font-size:14px;font-weight:bold;" is-link size="large" />
+      <van-cell icon="idcard" title="我的YSIM" title-style="font-size:14px;font-weight:bold;" is-link size="large" />
     </div>
     <div class="mb-2">
       <van-cell
-        icon="location-o"
+        icon="question-o"
         title="帮助中心"
         to="/account/help"
         title-style="font-size:14px;font-weight:bold;"
@@ -66,7 +60,7 @@
         size="large"
       />
       <van-cell
-        icon="location-o"
+        icon="setting-o"
         title="设置"
         to="/account/settings"
         title-style="font-size:14px;font-weight:bold;"
@@ -76,21 +70,11 @@
     </div>
     <div class="flex bg-[#fff] p-2 mb-2 rounded-lg">
       <div class="flex-1 flex flex-col ml-3">
-        <h3 class="text-sm font-bold">klook容易使用和理解吗?</h3>
+        <h3 class="text-sm font-bold">PathPro容易使用和理解吗?</h3>
         <span class="text-xs my-2">想听听您的意见!</span>
         <van-button type="danger">填写问卷</van-button>
       </div>
       <div class="w-24 h-24">
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" alt="" />
-      </div>
-    </div>
-    <div class="flex bg-[#fff] p-2 mb-2 rounded-lg">
-      <div class="flex-1 flex flex-col ml-3">
-        <h3 class="text-sm font-bold">获得优惠</h3>
-        <span class="text-xs my-2">每成功邀请一位好友可获得￥20旅行基金</span>
-        <van-button type="danger">填写问卷</van-button>
-      </div>
-      <div class="w-28 h-28">
         <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" alt="" />
       </div>
     </div>
@@ -100,9 +84,13 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router"
 const router = useRouter()
+const toLogin = () => {
+  router.push("/login")
+}
 const toManagement = () => {
   router.push("/account/management")
 }
+const token = localStorage.getItem("token")
 </script>
 
 <style scoped>

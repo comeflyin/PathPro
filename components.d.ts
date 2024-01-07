@@ -17,7 +17,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     TourItem: typeof import('./src/components/DiscountSection/TourItem.vue')['default']
     TravelMarketing: typeof import('./src/components/TravelAgent/TravelMarketing.vue')['default']
-    TripsOrder: typeof import('./src/components/TripssOrder/TripsOrder.vue')['default']
+    TripsOrder: typeof import('./src/components/TripsOrder/TripsOrder.vue')['default']
     VanActionSheet: typeof import('vant/es')['ActionSheet']
     VanButton: typeof import('vant/es')['Button']
     VanCascader: typeof import('vant/es')['Cascader']

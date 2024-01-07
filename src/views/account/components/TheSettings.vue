@@ -11,13 +11,17 @@
     <van-cell title="意见反馈" title-style="font-size:12px;" is-link size="large" />
     <van-cell title="关于" title-style="font-size:12px;" is-link size="large" />
     <div class="mt-2">
-      <van-cell title="退出" title-style="font-size:12px;" is-link size="large" />
+      <van-cell @click="quit" title="退出" title-style="font-size:12px;" is-link size="large" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 const onClickLeft = () => {
+  history.back()
+}
+const quit = () => {
+  localStorage.removeItem("token")
   history.back()
 }
 </script>

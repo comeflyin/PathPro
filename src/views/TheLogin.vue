@@ -1,6 +1,6 @@
 <template>
   <div class="w-screen h-screen">
-    <van-nav-bar left-arrow>
+    <van-nav-bar left-arrow @click-left="back">
       <template #right>
         <span class="text-xs text-gray-400">遇到问题</span>
       </template>
@@ -42,7 +42,11 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
 import { useRouter } from "vue-router"
+// import axios from "@/api/axios.ts"
 const router = useRouter()
+const back = () => {
+  router.back()
+}
 interface LoginInfo {
   username: string
   password: string
@@ -52,8 +56,10 @@ const params = reactive<LoginInfo>({
   password: "",
 })
 const checked = ref(false)
-const onSubmit = () => {
+const onSubmit = async () => {
   console.log(params)
+  // const data = await axios.post("/login", params)
+  // console.log(data)
 }
 const toRegister = () => {
   router.push("/register")
