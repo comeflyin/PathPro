@@ -1,5 +1,5 @@
 <template>
-  <div class="m-2">
+  <div class="p-2 pt-4" ref="coupon">
     <span class="font-semibold text-xl ml-2 mb-3">领卷享折扣</span>
     <div class="relative">
       <img src="../../assets/image/DiscountSection/coupon.jpg" alt="" />

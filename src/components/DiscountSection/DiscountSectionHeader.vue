@@ -1,5 +1,5 @@
 <template>
-  <div class="m-4 mt-8 mb-0 flex items-center relative">
+  <div class="p-4 pt-8 mb-0 flex items-center relative">
     <span class="mr-3 font-semibold text-3xl">优惠享不停</span>
     <button class="border-black border text-sm rounded-lg pl-2 pr-2 h-9">
       专属推荐

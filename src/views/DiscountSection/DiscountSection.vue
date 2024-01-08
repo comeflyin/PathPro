@@ -6,13 +6,13 @@
       <!-- 选项栏 -->
       <NavBar />
       <!-- 领卷享折扣 -->
-      <DiscountCoupon />
+      <DiscountCoupon id="coupon" />
       <!-- 精选优惠 -->
-      <DiscountSection />
+      <DiscountSection id="section" />
       <!-- 礼卷包 -->
-      <GiftPack />
+      <GiftPack id="giftPack" />
       <!-- 打折热卖 -->
-      <DiscountHotSale />
+      <DiscountHotSale id="hotSale" />
     </div>
   </div>
 </template>
