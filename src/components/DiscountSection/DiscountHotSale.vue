@@ -1,5 +1,5 @@
 <template>
-  <div class="m-4">
+  <div class="p-4" ref="hotSale">
     <span class="font-semibold text-xl pb-2 flex">打折热卖区</span>
     <div class="bg-white rounded-2xl p-4 h-full">
       <!-- 标签 城市选择 -->
@@ -19,6 +19,7 @@
       <van-loading v-if="Lodding" class="flex justify-center" color="#ff5303" />
       <HotSaleList v-else class="px-4" :items="hotSaleList" :next="handleNextPage" />
       <van-loading v-if="hasMoreLodding" class="flex justify-center" />
+      <van-back-top offset="2500" bottom="10vh" />
     </div>
   </div>
 </template>
