@@ -1,5 +1,5 @@
 <template>
-  <div>5555</div>
+  <div>SearchBar</div>
 </template>
 
 <script setup lang="ts"></script>

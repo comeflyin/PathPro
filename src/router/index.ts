@@ -5,17 +5,12 @@ const rootRoutes: RouteRecordRaw[] = [
   {
     path: "home",
     name: "Home",
-    component: () => import("@/views/TheHome.vue"),
+    component: () => import("@/views/HomePage/HomPage.vue"),
   },
   {
     path: "account",
     name: "Account",
     component: () => import("@/views/account/TheAccount.vue"),
-  },
-  {
-    path: "settings",
-    name: "Settings",
-    component: () => import("@/views/account/components/TheSettings.vue"),
   },
   {
     path: "discount",
@@ -64,6 +59,41 @@ const routes: RouteRecordRaw[] = [
     path: "/trip/more",
     name: "MoreCity",
     component: () => import("@/views/TravelPlan/MoreCity.vue"),
+  },
+  {
+    path: "/account/settings",
+    name: "Settings",
+    component: () => import("@/views/account/components/TheSettings.vue"),
+  },
+  {
+    path: "/account/help",
+    name: "Help",
+    component: () => import("@/views/account/components/HelpCenter.vue"),
+  },
+  {
+    path: "/account/order",
+    name: "Order",
+    component: () => import("@/views/account/components/MyOrder.vue"),
+  },
+  {
+    path: "/account/information",
+    name: "Information",
+    component: () => import("@/views/account/components/MyInformation.vue"),
+  },
+  {
+    path: "/account/management",
+    name: "Management",
+    component: () => import("@/views/account/components/informationManagement.vue"),
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/TheLogin.vue"),
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: () => import("@/views/TheRegister.vue"),
   },
 ]
 

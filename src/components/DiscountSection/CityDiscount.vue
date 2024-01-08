@@ -1,5 +1,7 @@
 <template>
   <div class="bg-white rounded-2xl p-4 h-full border-neutral-200 border">
+    <!-- 标签 城市选择 -->
+
     <div class="cs flex overflow-hidden overflow-x-auto">
       <div
         v-for="(cityDiscount, index) in discountInfo"
@@ -11,9 +13,13 @@
         {{ cityDiscount.region }}
       </div>
     </div>
-    <div class="mt-3 mb-4 pt-1 pb-1 bg-[#fcf3de] text-[#ec9837] font-semibold text-center rounded-lg">
-      <van-icon name="underway" />
-      距结束仅剩{{ leftTime }}天
+
+    <!-- 倒计时 -->
+    <div
+      class="mt-3 mb-4 pt-1 pb-1 bg-[#fcf3de] text-[#ec9837] font-semibold rounded-lg flex justify-center items-center"
+    >
+      <van-icon name="underway" class="mr-2" />
+      <van-count-down :time="time" format="距结束仅剩 DD 天 HH 时 mm 分" />
     </div>
     <TourItem :discounts="discountInfo[checked].discounts" :leftTime="leftTime" />
   </div>
@@ -27,9 +33,14 @@ import { useDiscountStore } from "@/stores/discountStore"
 const discounts = useDiscountStore()
 const discountInfo = ref(discounts.discountInfo)
 
-const leftTime = 6
-let checked = ref(0)
+// 倒计时
+const leftTime = 6 * 24 * 60 * 60 * 1000
+const time = ref(leftTime)
 
+// 城市选择
+// 选中的城市
+let checked = ref(0)
+// 选择城市
 const checkedCity = (index: number) => {
   checked.value = index
 }
