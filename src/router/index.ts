@@ -84,7 +84,7 @@ const router = createRouter({
   routes,
 })
 const EnterableRoutes: string[] = ["Home", "Account", "Collection", "Trip", "discount", "Login", "Register"]
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   if (EnterableRoutes.includes(to.name as string)) {
     next()
   } else {
