@@ -8,14 +8,29 @@ const rootRoutes: RouteRecordRaw[] = [
     component: () => import("@/views/TheHome.vue"),
   },
   {
-    path: "specialOffer",
-    name: "SpecialOffer",
-    component: () => import("@/views/SpecialOffer/SpecialOffer.vue"),
+    path: "account",
+    name: "Account",
+    component: () => import("@/views/account/TheAccount.vue"),
+  },
+  {
+    path: "settings",
+    name: "Settings",
+    component: () => import("@/views/account/components/TheSettings.vue"),
+  },
+  {
+    path: "discount",
+    name: "discount",
+    component: () => import("@/views/DiscountSection/DiscountSection.vue"),
   },
   {
     path: "collection",
     name: "Collection",
     component: () => import("@/views/Collection/TheCollection.vue"),
+  },
+  {
+    path: "trip",
+    name: "Trip",
+    component: () => import("@/views/TravelPlan/TravelPlan.vue"),
   },
 ]
 
@@ -23,17 +38,14 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "App",
-    component: () => import("@/App.vue"),
-    redirect: "/root",
-    children: [
-      {
-        path: "root",
-        name: "Root",
-        component: () => import("@/views/TheRoot.vue"),
-        redirect: "/root/home",
-        children: rootRoutes,
-      },
-    ],
+    component: () => import("@/views/TheRoot.vue"),
+    redirect: "/home",
+    children: rootRoutes,
+  },
+  {
+    path: "/trip/more",
+    name: "MoreCity",
+    component: () => import("@/views/TravelPlan/MoreCity.vue"),
   },
 ]
 
