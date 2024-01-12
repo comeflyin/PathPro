@@ -1,5 +1,5 @@
 <template>
-  <div class="m-2 mt-5">
+  <div class="p-2 pt-5" ref="section">
     <span class="font-semibold text-xl ml-2 mb-3">精选优惠</span>
     <div class="m-2 mt-7 border rounded-3xl relative bg-[#fee8bf] h-auto">
       <img

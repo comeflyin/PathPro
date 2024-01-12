@@ -8,7 +8,7 @@
         :key="index"
         :class="{ active: checked === index }"
         @click="checkedCity(index)"
-        class="text-nowrap p-1 pl-3 pr-3 m-1 border rounded-3xl"
+        class="text-nowrap whitespace-nowrap p-1 pl-3 pr-3 m-1 border rounded-3xl"
       >
         {{ cityDiscount.region }}
       </div>

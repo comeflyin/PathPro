@@ -7,4 +7,4 @@ export type HotSale = {
   hotSales: HotSaleItem[]
 }
 
-type HotSaleItem = Omit<DiscountItem, "discounts" | "participants" | "tags">
+export type HotSaleItem = Omit<DiscountItem, "discounts" | "participants" | "tags">

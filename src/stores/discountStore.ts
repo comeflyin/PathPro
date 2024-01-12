@@ -2,7 +2,6 @@ import { defineStore } from "pinia"
 import { ref } from "vue"
 import type { Discount } from "@/types/discount"
 import type { Gifts } from "@/types/gift"
-import type { HotSale } from "@/types/hotSale"
 
 export const useDiscountStore = defineStore("discount", () => {
   const discountInfo = ref<Discount[]>([
@@ -147,7 +146,7 @@ export const useDiscountStore = defineStore("discount", () => {
       region: "新加坡",
       discounts: [
         {
-          title: "新加坡夜间野生动物园门票（含游园车之旅）",
+          title: "新加坡夜间野生动物园门票",
           cover:
             "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/e9lsycjm1wb884bvek1y.webp",
           evaluate: 7935,
@@ -391,126 +390,5 @@ export const useGiftStore = defineStore("gifts", () => {
 
   return {
     giftsInfo,
-  }
-})
-
-export const useHotSaleStore = defineStore("hotSale", () => {
-  const hotSaleInfo = ref<HotSale[]>([
-    {
-      type: "全部",
-      hotSales: [
-        {
-          title: "东京三丽鸥彩虹乐园门票",
-          cover:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
-          evaluate: 4273,
-          rating: 4.7,
-          city: "东京",
-          price: 165,
-        },
-      ],
-    },
-    {
-      type: "住宿套餐",
-      hotSales: [
-        {
-          title: "东京三丽鸥彩虹乐园门票",
-          cover:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
-          evaluate: 4273,
-          rating: 4.7,
-          city: "东京",
-          price: 165,
-        },
-      ],
-    },
-    {
-      type: "WiFi",
-      hotSales: [
-        {
-          title: "东京三丽鸥彩虹乐园门票",
-          cover:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
-          evaluate: 4273,
-          rating: 4.7,
-          city: "东京",
-          price: 165,
-        },
-      ],
-    },
-    {
-      type: "全部",
-      hotSales: [
-        {
-          title: "东京三丽鸥彩虹乐园门票",
-          cover:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
-          evaluate: 4273,
-          rating: 4.7,
-          city: "东京",
-          price: 165,
-        },
-      ],
-    },
-    {
-      type: "全部",
-      hotSales: [
-        {
-          title: "东京三丽鸥彩虹乐园门票",
-          cover:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
-          evaluate: 4273,
-          rating: 4.7,
-          city: "东京",
-          price: 165,
-        },
-      ],
-    },
-    {
-      type: "全部",
-      hotSales: [
-        {
-          title: "东京三丽鸥彩虹乐园门票",
-          cover:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
-          evaluate: 4273,
-          rating: 4.7,
-          city: "东京",
-          price: 165,
-        },
-      ],
-    },
-    {
-      type: "全部",
-      hotSales: [
-        {
-          title: "东京三丽鸥彩虹乐园门票",
-          cover:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
-          evaluate: 4273,
-          rating: 4.7,
-          city: "东京",
-          price: 165,
-        },
-      ],
-    },
-    {
-      type: "全部",
-      hotSales: [
-        {
-          title: "东京三丽鸥彩虹乐园门票",
-          cover:
-            "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
-          evaluate: 4273,
-          rating: 4.7,
-          city: "东京",
-          price: 165,
-        },
-      ],
-    },
-  ])
-
-  return {
-    hotSaleInfo,
   }
 })
