@@ -2,7 +2,7 @@
   <div class="item-warpper p-2 space-y-1" :ref="forwardRef" :class="{ flex: isflex }" :style="{ width }">
     <!-- 图片封面 -->
     <img
-      :src="discount.cover"
+      v-lazy="discount.cover"
       alt=""
       class="rounded-xl"
       :style="{
