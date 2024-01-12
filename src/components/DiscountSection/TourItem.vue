@@ -1,17 +1,18 @@
 <template>
   <div>
     <div class="flex rounded-xl mb-4">
-      <MsgItem :discount="discounts[0]" width="100%" widthimg="50%" :isflex="true" :Exclusive="true" />
+      <MsgItem :discount="discounts[0]" width="98%" widthimg="48%" :isflex="true" :Exclusive="true" />
     </div>
     <div class="flex flex-wrap justify-between mt-2">
       <!-- 循环生成所有Item -->
       <MsgItem
         v-for="(item, index) in discounts"
+        ref="items"
         :key="index"
         v-show="index > 0 && index < showCount"
         :discount="item"
         :lines="1"
-        width="48%"
+        width="50%"
       />
     </div>
     <div
@@ -28,6 +29,8 @@
 import type { DiscountItem } from "@/types/discount"
 import { ref } from "vue"
 import MsgItem from "./MsgItem.vue"
+
+const items = ref<HTMLElement[]>([])
 
 const { discounts } = defineProps<{
   discounts: DiscountItem[]

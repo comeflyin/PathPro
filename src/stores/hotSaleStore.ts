@@ -8,7 +8,7 @@ export const useHotSaleStore = defineStore("hotSale", () => {
       type: "全部",
       hotSales: [
         {
-          title: "【限时优惠】深圳野生动物园门票",
+          title: "【限时优惠】深圳野生动物园门票这里是一段测试没有数据自己写",
           cover:
             "https://res.klook.com/image/upload/fl_lossy.progressive,w_800,h_534,c_fill,q_85/activities/ma4qfzieqwesrubuex8d.webp",
           evaluate: 1277,

@@ -9,7 +9,7 @@ export const useDiscountStore = defineStore("discount", () => {
       region: "日本",
       discounts: [
         {
-          title: "东京三丽鸥彩虹乐园门票",
+          title: "东京三丽鸥彩虹乐园",
           cover:
             "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/z5oxfvdbejb5s78qjwge.webp",
           evaluate: 4273,
@@ -146,7 +146,7 @@ export const useDiscountStore = defineStore("discount", () => {
       region: "新加坡",
       discounts: [
         {
-          title: "新加坡夜间野生动物园门票",
+          title: "新加坡夜间野生动物园",
           cover:
             "https://res.klook.com/image/upload/fl_lossy.progressive,w_640,h_640,c_fill,q_85/activities/e9lsycjm1wb884bvek1y.webp",
           evaluate: 7935,

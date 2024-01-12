@@ -1,5 +1,5 @@
 <template>
-  <div class="item-warpper mt-2 mb-2" :class="{ flex: isflex }" :style="{ width }">
+  <div class="item-warpper p-2 space-y-1" :ref="forwardRef" :class="{ flex: isflex }" :style="{ width }">
     <!-- 图片封面 -->
     <img
       :src="discount.cover"
@@ -10,7 +10,11 @@
       }"
     />
     <!-- 信息块 -->
-    <div class="flex flex-col justify-center" :class="{ 'ml-2': isflex }" :style="{ width: widthimg }">
+    <div
+      class="flex flex-col justify-center"
+      :class="{ 'ml-2': isflex }"
+      :style="{ flex: isflex ? `0 0 ${widthimg}` : `0 0 ${width}` }"
+    >
       <!-- Exclusive Discount -->
       <div v-if="Exclusive">
         <span
@@ -22,18 +26,21 @@
       <!-- 城市信息 -->
       <span class="text-sm text-[#7d7d7d] mt-1" v-if="discount.city">{{ discount.city }}</span>
       <!-- 优惠信息标题 -->
+
       <span
-        class="text-sm font-semibold w-11/12 overflow-hidden text-ellipsis"
+        class="text-sm font-semibold max-w-full overflow-hidden text-ellipsis"
         v-if="discount.title"
-        :class="{ 'whitespace-nowrap': lines == 1, [`line-clamp-${lines}`]: lines != 1 }"
+        :class="{ lines: lines != 1 }"
+        :style="{ '-webkit-line-clamp': lines != 1 ? lines : 'none', 'white-space': lines == 1 ? 'nowrap' : 'normal' }"
       >
         {{ discount.title }}
       </span>
+
       <!-- 评分与参与情况 -->
-      <div class="text-sm flex-nowrap flex">
+      <div class="text-sm flex-nowrap flex w-full">
         <span class="text-[#f09b0a]" v-if="discount.rating"><van-icon name="star" />{{ discount.rating }}</span>
         <span
-          class="text-[#9a9a9a] w-3/4 whitespace-nowrap overflow-hidden text-ellipsis"
+          class="text-[#9a9a9a] flex-1 whitespace-nowrap overflow-hidden text-ellipsis"
           v-if="discount.evaluate || discount.participants"
         >
           <span v-if="discount.evaluate">({{ discount.evaluate }})</span
@@ -42,7 +49,7 @@
         </span>
       </div>
       <!-- 标签 -->
-      <div class="flex mt-1 overflow-hidden flex-nowrap">
+      <div class="flex mt-1 overflow-hidden flex-nowrap w-full">
         <div
           class="mr-2 bg-[#f5f5f5] text-[#7d7d7d] pl-2 pr-2 rounded-xl text-xs flex items-center"
           v-for="(tag, index) in discount.tags"
@@ -51,13 +58,13 @@
           {{ tag }}
         </div>
       </div>
-      <div>
+      <div class="w-full">
         <!-- 价格 -->
         <span>￥{{ discount.price }}</span>
         <span class="text-sm ml-1">起</span>
       </div>
-      <div class="overflew-hidden flex-nowrap whitespace-nowrap w-1/2">
-        <!-- 打折信息 -->
+      <!-- <div class="overflew-hidden flex-nowrap whitespace-nowrap w-full">
+         打折信息
         <span
           class="text-[#ff5b00] bg-[#fff0e5] text-xs text-center font-semibold rounded-lg mr-2 pl-2 pr-2 pt-1 pb-1"
           v-for="(discountMsg, index) in discount.discounts"
@@ -65,12 +72,14 @@
         >
           {{ discountMsg }}
         </span>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useForwardRef } from "@/hooks/useForwardRef"
+
 interface MsgItem {
   /** 优惠信息标题 */
   title?: string
@@ -115,6 +124,14 @@ withDefaults(
     Exclusive: false,
   },
 )
+
+const forwardRef = useForwardRef()
 </script>
 
-<style scoped></style>
+<style scoped>
+.lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>

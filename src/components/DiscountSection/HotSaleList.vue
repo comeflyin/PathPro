@@ -1,7 +1,13 @@
 <template>
   <div class="list-wrapper flex flex-wrap items-center">
     <div class="item flex-[0_0_50%]" v-for="(item, index) in items" :key="index">
-      <HotSaleCard :item="item" :ref="(el) => (index === items.length - 1 ? (itemRef = el as HTMLElement) : '')" />
+      <MsgItem
+        :key="index"
+        :discount="item"
+        :lines="2"
+        width="100%"
+        :ref="(el) => (index === items.length - 1 ? (itemRef = el as HTMLElement) : '')"
+      />
     </div>
   </div>
   <div class="text-center" v-if="!hasMore">没有更多了</div>
@@ -9,7 +15,7 @@
 
 <script setup lang="ts">
 import type { HotSaleItem } from "@/types/hotSale"
-import HotSaleCard from "./HotSaleCard.vue"
+// import HotSaleCard from "./HotSaleCard.vue"
 import useIntersectionObserver from "@/hooks/useIntersectionObserver"
 import { ref } from "vue"
 
